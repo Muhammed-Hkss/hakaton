@@ -1,0 +1,111 @@
+
+.background_register {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #207fa8;
+  overflow: hidden;
+  
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    min-width: 300vw;
+    min-height: 300vw;
+    background-color: #ffffff;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  
+  &:before {
+    bottom: 15vh;
+    border-radius: 45%;
+    animation-duration: 10s;
+  }
+  
+  &:after {
+    bottom: 12vh;
+    opacity: .5;
+    border-radius: 47%;
+    animation-duration: 10s;
+  }
+}
+
+@keyframes rotate {
+  0% {transform: translate(-50%, 0) rotateZ(0deg);}
+  50% {transform: translate(-50%, -2%) rotateZ(180deg);}
+  100% {transform: translate(-50%, 0%) rotateZ(360deg);}
+}
+
+
+
+
+
+
+.dropdawn{
+  position: relative;
+  width: 400px;
+  border: solid 1px black;
+  padding: 20px;
+  margin: 200px auto;
+  border-radius: 25px;
+  z-index: 1;
+
+  .register_container{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+  
+    .register_row{
+      display: flex;
+      gap: 10px;
+      
+      .register_inputs{
+        padding: 10px;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px;
+        outline: none;
+        border: 2px solid rgba(0, 0, 0, 0.719);
+        margin: 10px 0px;
+      }
+  
+      .select {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 10px;
+        border: 2px solid rgba(0, 0, 0, 0.719);
+        font-size: 17px;
+        * {
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+
+  .signup_btn{
+    width: 400px;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #7896FF;
+    color: white;
+    border: #7896FF 2px solid;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+}
+
+
+
+
+
+
