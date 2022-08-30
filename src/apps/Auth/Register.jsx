@@ -11,16 +11,14 @@ const Register = () => {
   const [userName , setUserName] = React.useState('')
   
   const [loading , setLoading] = React.useState(false)
-  const [error , setError] = React.useState('')
-
   
   const navigate = useNavigate()
+  
 
 
   const handelSubmit = e => {
     e.preventDefault()
     setLoading(true)
-    console.log(email , userName , password);
     if(email && userName && password){
       signUp({
         email,
@@ -28,19 +26,14 @@ const Register = () => {
         password,
       })
       .then(r => {
-        if(r.id){
-          navigate('/login')
-        } else {
-          setError(r)
+        if(r.data.id){
+          navigate('/')
         }
       })
       .finally(() => {
         setLoading(false)
       }
     )
-  } else {
-    setError('Заполните все поля!')
-    setLoading(false)
   }
 }
 
@@ -85,13 +78,6 @@ const Register = () => {
               </div>
             </div>
 
-              {
-                error && (
-                  <h5 className={cls.error}>
-                    {error}
-                  </h5>
-                )
-              }
 
               <Link style={{display:'flex' , justifyContent:'center' , color:'black' , textDecoration:'none'}} to='/login'>
                 go to Login
@@ -115,3 +101,10 @@ const Register = () => {
 }
 
 export default Register
+
+
+
+
+// mahmut
+
+// badullloh

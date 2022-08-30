@@ -4,8 +4,9 @@ import instance from './api';
 
 export const signIn = data => instance.post(`auth/token/login/` , data)
 
+// export const users = (data) => instance.get(`auth/users/` , data)
 
-export const getUser = (data , id) => instance.get(id , data)
+export const getUser = data => instance.get(`auth/users/`, data)
 
 
 export function signUp(d){
